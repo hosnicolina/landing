@@ -63,32 +63,28 @@
     },
     {
       name: "Sham Ali",
-      contenido:
-        "cuanto vale?",
+      contenido: "cuanto vale?",
       imagen: "./img/sham_ali.png",
       link: link[6]
     },
 
     {
       name: "Ali Sahil",
-      contenido:
-        "si sirve?",
+      contenido: "si sirve?",
       imagen: "./img/Ali_Sahil.png",
       link: link[7]
     },
 
     {
       name: "vicky babu",
-      contenido:
-        "Does it work yes or no?",
+      contenido: "Does it work yes or no?",
       imagen: "/img/orlando_ruiz arenas.png",
       link: link[8]
     },
 
     {
       name: "hussnian hussnian",
-      contenido:
-        "my results, just 3cm in 4 months.",
+      contenido: "my results, just 3cm in 4 months.",
       imagen: "./img/hussnian_hussnian.png",
       link: link[9]
     }
@@ -114,6 +110,7 @@
 
       setTimeout(() => {
         let miDiv = d.createElement("div");
+        miDiv.className = "facebook-box";
         miDiv.innerHTML = templateComentario(comentario);
         commentBox.insertAdjacentElement("afterbegin", miDiv);
       }, time);
@@ -122,10 +119,11 @@
 
   function templateComentario(obj) {
     let html = `
-    <div class="facebook-box">
         <img class="facebook-box__img" src="${obj.imagen}" alt="">
         <div class="facebook-box__body">
-          <span class="facebook-box__title"><a href="${obj.link}" target="blank">${obj.name}</a></span>
+          <span class="facebook-box__title"><a href="${
+            obj.link
+          }" target="blank">${obj.name}</a></span>
           <span class="facebook-box__content">${obj.contenido}</span>
           <div class="facebook-box__footer">
               <span class="enlace-facebook">Me gusta</span>
@@ -141,7 +139,6 @@
               <span class="enlace-gris">Justo ahora</span>
             </div>
         </div>
-    </div>
     `;
     return html;
   }
