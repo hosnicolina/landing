@@ -137,7 +137,7 @@
                 " src="img/like.png" alt=""></span>
               <span> · </span>
               <span id="numberLike"></span>
-              <span> · </span>
+              <!-- <span> · </span> -->
               <span class="enlace-gris">Justo ahora</span>
             </div>
         </div>
