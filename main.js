@@ -138,7 +138,7 @@
               <span> · </span>
               <span id="numberLike"></span>
               <span> · </span>
-              <span class="enlace-gris">4h · Editado</span>
+              <span class="enlace-gris">Justo ahora</span>
             </div>
         </div>
     </div>
