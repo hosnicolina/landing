@@ -1,6 +1,5 @@
 ((d, c) => {
   let commentBox = d.querySelector(".facebook-comentarios");
-  let videoYoutube = d.querySelector(".html5-video-container video");
 
   const link = [
     "https://www.facebook.com/marty.lanier.543?hc_ref=ARTg82Hb4uGSwyLqoJYel5HYGyH9mFZ1-EjYWSh4YYucW_aTM0uhsSh_psoAdRFi6Dc",
@@ -57,12 +56,6 @@
       link: link[4]
     },
     {
-      name: "jd hewett",
-      contenido: "with what is paid?",
-      imagen: "./img/jd_hewett.png",
-      link: link[5]
-    },
-    {
       name: "Sham Ali",
       contenido: "cuanto vale?",
       imagen: "./img/sham_ali.png",
@@ -88,41 +81,60 @@
       contenido: "my results, just 3cm in 4 months.",
       imagen: "./img/hussnian_hussnian.png",
       link: link[9]
+    },
+    {
+      name: "jd hewett",
+      contenido: "with what is paid?",
+      imagen: "./img/jd_hewett.png",
+      link: link[5]
     }
   ];
 
-  window.addEventListener("load", insertarComentario(comentario).then(res=>{
-    console.log(res)
-  }).catch(err=>{
-    console.log(err);
-  }));
+  window.addEventListener(
+    "load",
+    insertarComentario(comentario,commentBox)
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => {
+        console.log(err);
+      })
+  );
 
-  function insertarComentario(data) {
+  function insertarComentario(data,element) {
     return new Promise((resolve, reject) => {
-      /**
-       * Establece un tiempo ramdom para el setInterval
-       */
-      let time = random(2000, 8000);
-      let s = setInterval(() => {
-        let time = random(2000, 10000);
-        let comentario = data.shift();
-
-        /**
-         * Si el array esta vacio limpia el setInterval
-         */
-        if (data.length === 0) {
-          clearInterval(s);
-          resolve(true);
-        }
-
-        setTimeout(() => {
-          let miDiv = d.createElement("div");
-          miDiv.className = "facebook-box";
-          miDiv.innerHTML = templateComentario(comentario);
-          commentBox.insertAdjacentElement("afterbegin", miDiv);
-        }, time);
-      }, time);
+      insertarComentarios(resolve,data,element)
     });
+  }
+
+  function comentariosRespuesta(params) {
+
+  }
+
+  function insertarComentarios(resolve, data, element) {
+    /**
+     * Establece un tiempo ramdom para el setInterval
+     */
+    let time = random(2000, 8000);
+    let s = setInterval(() => {
+      let time = random(2000, 10000);
+      let comentario = data.shift();
+
+      /**
+       * Si el array esta vacio limpia el setInterval
+       */
+      if (data.length === 0) {
+        clearInterval(s);
+        resolve(true);
+      }
+
+      setTimeout(() => {
+        let miDiv = d.createElement("div");
+        miDiv.className = "facebook-box";
+        miDiv.innerHTML = templateComentario(comentario);
+        element.insertAdjacentElement("afterbegin", miDiv);
+      }, time);
+    }, time);
   }
 
   function templateComentario(obj) {
