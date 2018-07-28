@@ -156,6 +156,7 @@ body {
   font-family: "Open Sans", sans-serif;
   font-weight: 600;
   padding: 0.7rem 0.3rem;
+  line-height: .9;
 }
 
 .landing-subtitle {
