@@ -210,6 +210,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin-bottom: .5rem;
 }
 
 .facebook-box__body {
@@ -219,6 +220,9 @@ body {
 .facebook-box__img {
   width: 50px;
   height: 50px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
 }
 
 .facebook-box__title {
