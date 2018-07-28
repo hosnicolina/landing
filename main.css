@@ -1,0 +1,258 @@
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+h1, .h1 {
+  font-size: 2.5rem;
+}
+
+h2, .h2 {
+  font-size: 2rem;
+}
+
+h3, .h3 {
+  font-size: 1.75rem;
+}
+
+h4, .h4 {
+  font-size: 1.5rem;
+}
+
+h5, .h5 {
+  font-size: 1.25rem;
+}
+
+h6, .h6 {
+  font-size: 1rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  padding-top: 25px;
+  height: 0;
+}
+
+.videoWrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video {
+  padding: 0.7rem 0.3rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.enlace-facebook {
+  color: #4267b2;
+}
+
+.enlace-gris {
+  color: #90949c;
+}
+
+@font-face {
+  font-family: 'fontello';
+  src: url("./font/fontello.eot?4077188");
+  src: url("./font/fontello.eot?4077188#iefix") format("embedded-opentype"), url("./font/fontello.woff?4077188") format("woff"), url("./font/fontello.ttf?4077188") format("truetype"), url("./font/fontello.svg?4077188#fontello") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.demo-icon {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+  /* You can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+body {
+  background: #e9ebee;
+}
+
+/* body {
+  background: rgba(71, 135, 245, 0.9);
+  background: -moz-linear-gradient(
+    -45deg,
+    rgba(71, 135, 245, 0.9) 0%,
+    rgba(230, 73, 62, 0.9) 98%,
+    rgba(233, 72, 58, 0.94) 100%
+  );
+  background: -webkit-gradient(
+    left top,
+    right bottom,
+    color-stop(0%, rgba(71, 135, 245, 0.9)),
+    color-stop(98%, rgba(230, 73, 62, 0.9)),
+    color-stop(100%, rgba(233, 72, 58, 0.94))
+  );
+  background: -webkit-linear-gradient(
+    -45deg,
+    rgba(71, 135, 245, 0.9) 0%,
+    rgba(230, 73, 62, 0.9) 98%,
+    rgba(233, 72, 58, 0.94) 100%
+  );
+  background: -o-linear-gradient(
+    -45deg,
+    rgba(71, 135, 245, 0.9) 0%,
+    rgba(230, 73, 62, 0.9) 98%,
+    rgba(233, 72, 58, 0.94) 100%
+  );
+  background: -ms-linear-gradient(
+    -45deg,
+    rgba(71, 135, 245, 0.9) 0%,
+    rgba(230, 73, 62, 0.9) 98%,
+    rgba(233, 72, 58, 0.94) 100%
+  );
+  background: linear-gradient(
+    135deg,
+    rgba(71, 135, 245, 0.9) 0%,
+    rgba(230, 73, 62, 0.9) 98%,
+    rgba(233, 72, 58, 0.94) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4787f5', endColorstr='#e9483a', GradientType=1 );
+} */
+.landing-title {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
+  padding: 0.7rem 0.3rem;
+}
+
+.landing-subtitle {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  padding: 0.7rem 0.3rem;
+}
+
+.comentarios {
+  padding: 0.7rem 0.3rem;
+  font-family: "Open Sans", sans-serif;
+  line-height: .9;
+}
+
+.facebook {
+  background-color: #fff;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+  padding: 15px 20px 20px;
+}
+
+.facebook-title {
+  color: #3b4248;
+  font-size: 1.25rem;
+}
+
+.facebook-header {
+  border-bottom: 1px solid #e9ebee;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 25px;
+  margin-bottom: 24px;
+  padding: 8px 0;
+}
+
+.facebook-response {
+  border-left: 1px solid #e9ebee;
+  padding-left: 0.6rem;
+}
+
+.facebook-footer {
+  color: #365899;
+}
+
+.facebook-footer span {
+  font-size: 0.6875rem;
+}
+
+.facebook-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.facebook-box__body {
+  padding-left: 0.6rem;
+}
+
+.facebook-box__img {
+  width: 50px;
+  height: 50px;
+}
+
+.facebook-box__title {
+  display: block;
+  color: #365899;
+  text-transform: capitalize;
+}
+
+.facebook-box__title a {
+  color: inherit;
+}
+
+.facebook-box__content {
+  font-size: 0.875rem;
+}
+
+.facebook-box__footer {
+  font-size: 0.76rem;
+  margin-bottom: 0.5rem;
+}
+
+.beneficios {
+  padding: 0.7rem 0.3rem;
+}
+
+.beneficio {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.25rem;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 1.5625rem;
+  margin-bottom: 5px;
+}
+
+.beneficio .check {
+  color: green;
+}
+/*# sourceMappingURL=main.css.map */
