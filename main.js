@@ -1,5 +1,6 @@
 ((d, c) => {
   let commentBox = d.querySelector(".facebook-comentarios");
+  let videoYoutube = d.querySelector(".html5-video-container video");
 
   const link = [
     "https://www.facebook.com/marty.lanier.543?hc_ref=ARTg82Hb4uGSwyLqoJYel5HYGyH9mFZ1-EjYWSh4YYucW_aTM0uhsSh_psoAdRFi6Dc",
@@ -90,31 +91,38 @@
     }
   ];
 
-  window.addEventListener("load", insertarComentario(comentario));
+  window.addEventListener("load", insertarComentario(comentario).then(res=>{
+    console.log(res)
+  }).catch(err=>{
+    console.log(err);
+  }));
 
   function insertarComentario(data) {
-    /**
-     * Establece un tiempo ramdom para el setInterval
-     */
-    let time = random(2000, 8000);
-    let s = setInterval(() => {
-      let time = random(2000, 10000);
-      let comentario = data.shift();
-
+    return new Promise((resolve, reject) => {
       /**
-       * Si el array esta vacio limpia el setInterval
+       * Establece un tiempo ramdom para el setInterval
        */
-      if (data.length === 0) {
-        clearInterval(s);
-      }
+      let time = random(2000, 8000);
+      let s = setInterval(() => {
+        let time = random(2000, 10000);
+        let comentario = data.shift();
 
-      setTimeout(() => {
-        let miDiv = d.createElement("div");
-        miDiv.className = "facebook-box";
-        miDiv.innerHTML = templateComentario(comentario);
-        commentBox.insertAdjacentElement("afterbegin", miDiv);
+        /**
+         * Si el array esta vacio limpia el setInterval
+         */
+        if (data.length === 0) {
+          clearInterval(s);
+          resolve(true);
+        }
+
+        setTimeout(() => {
+          let miDiv = d.createElement("div");
+          miDiv.className = "facebook-box";
+          miDiv.innerHTML = templateComentario(comentario);
+          commentBox.insertAdjacentElement("afterbegin", miDiv);
+        }, time);
       }, time);
-    }, time);
+    });
   }
 
   function templateComentario(obj) {
