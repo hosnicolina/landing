@@ -107,51 +107,6 @@ a {
   /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 }
 
-body {
-  background: #e9ebee;
-}
-
-/* body {
-  background: rgba(71, 135, 245, 0.9);
-  background: -moz-linear-gradient(
-    -45deg,
-    rgba(71, 135, 245, 0.9) 0%,
-    rgba(230, 73, 62, 0.9) 98%,
-    rgba(233, 72, 58, 0.94) 100%
-  );
-  background: -webkit-gradient(
-    left top,
-    right bottom,
-    color-stop(0%, rgba(71, 135, 245, 0.9)),
-    color-stop(98%, rgba(230, 73, 62, 0.9)),
-    color-stop(100%, rgba(233, 72, 58, 0.94))
-  );
-  background: -webkit-linear-gradient(
-    -45deg,
-    rgba(71, 135, 245, 0.9) 0%,
-    rgba(230, 73, 62, 0.9) 98%,
-    rgba(233, 72, 58, 0.94) 100%
-  );
-  background: -o-linear-gradient(
-    -45deg,
-    rgba(71, 135, 245, 0.9) 0%,
-    rgba(230, 73, 62, 0.9) 98%,
-    rgba(233, 72, 58, 0.94) 100%
-  );
-  background: -ms-linear-gradient(
-    -45deg,
-    rgba(71, 135, 245, 0.9) 0%,
-    rgba(230, 73, 62, 0.9) 98%,
-    rgba(233, 72, 58, 0.94) 100%
-  );
-  background: linear-gradient(
-    135deg,
-    rgba(71, 135, 245, 0.9) 0%,
-    rgba(230, 73, 62, 0.9) 98%,
-    rgba(233, 72, 58, 0.94) 100%
-  );
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4787f5', endColorstr='#e9483a', GradientType=1 );
-} */
 .landing-title {
   font-family: "Open Sans", sans-serif;
   font-weight: 600;
