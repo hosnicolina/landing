@@ -1,5 +1,6 @@
 ((d, c) => {
   let commentBox = d.querySelector(".facebook-comentarios");
+  let commentNumber = d.getElementById('commentNumber')
 
   const link = [
     "https://www.facebook.com/marty.lanier.543?hc_ref=ARTg82Hb4uGSwyLqoJYel5HYGyH9mFZ1-EjYWSh4YYucW_aTM0uhsSh_psoAdRFi6Dc",
@@ -92,23 +93,38 @@
 
   window.addEventListener(
     "load",
-    insertarComentario(comentario,commentBox)
-      .then(res => {
-        console.log(res);
+    insertarComentario(comentario, commentBox)
+      .then(res => res)
+      .then(data => {
+        console.log("Hola eso es:", data);
       })
       .catch(err => {
         console.log(err);
       })
   );
 
-  function insertarComentario(data,element) {
+  function insertarComentario(data, element) {
     return new Promise((resolve, reject) => {
-      insertarComentarios(resolve,data,element)
+      insertarComentarios(resolve, data, element);
     });
   }
 
-  function comentariosRespuesta(params) {
-
+  function comentariosRespuesta() {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        let respuesta = d.querySelector(".facebook-response > .facebook-box");
+        let data = {
+          name: "marty lanier",
+          contenido:
+            "I'm going to prove only that it's much cheaper than in other places",
+          imagen: "./img/marty_lanier.png",
+          link: link[0]
+        };
+        console.log(respuesta);
+        respuesta.innerHTML = templateComentario(data);
+        resolve(true);
+      }, 15000);
+    });
   }
 
   function insertarComentarios(resolve, data, element) {
@@ -116,8 +132,11 @@
      * Establece un tiempo ramdom para el setInterval
      */
     let time = random(2000, 8000);
+    let contador = 1;
+    let countNumber = Number(commentNumber.innerText);
+
     let s = setInterval(() => {
-      let time = random(2000, 10000);
+      let time = random(2000, 8000);
       let comentario = data.shift();
 
       /**
@@ -129,15 +148,18 @@
       }
 
       setTimeout(() => {
+        countNumber += 1;
+        commentNumber.innerText = countNumber;
         let miDiv = d.createElement("div");
         miDiv.className = "facebook-box";
-        miDiv.innerHTML = templateComentario(comentario);
+        miDiv.innerHTML = templateComentario(comentario,contador);
         element.insertAdjacentElement("afterbegin", miDiv);
+        contador++
       }, time);
     }, time);
   }
 
-  function templateComentario(obj) {
+  function templateComentario(obj,num) {
     let html = `
         <img class="facebook-box__img" src="${obj.imagen}" alt="">
         <div class="facebook-box__body">
@@ -146,18 +168,19 @@
           }" target="blank">${obj.name}</a></span>
           <span class="facebook-box__content">${obj.contenido}</span>
           <div class="facebook-box__footer">
-              <span class="enlace-facebook">Me gusta</span>
-              <span> · </span>
-              <span class="enlace-facebook">Responder</span>
-              <span><img style="
-                width:14px;
-                height:14px;
-                " src="img/like.png" alt=""></span>
-              <span> · </span>
-              <span id="numberLike"></span>
-              <!-- <span> · </span> -->
-              <span class="enlace-gris">Justo ahora</span>
-            </div>
+          <span class="enlace-facebook">Me gusta</span>
+          <span> · </span>
+          <span class="enlace-facebook">Responder</span>
+          <span><img style="
+            width:14px;
+            height:14px;
+            " src="img/like.png" alt=""></span>
+          <span> · </span>
+          <span id="numberLike-${num}"></span>
+          <!-- <span> · </span> -->
+          <span class="enlace-gris">Justo ahora</span>
+          </div>
+          <div class="facebook-response"></div>
         </div>
     `;
     return html;

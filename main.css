@@ -156,7 +156,7 @@ body {
   font-family: "Open Sans", sans-serif;
   font-weight: 600;
   padding: 0.7rem 0.3rem;
-  line-height: .9;
+  line-height: 0.9;
 }
 
 .landing-subtitle {
@@ -168,7 +168,7 @@ body {
 .comentarios {
   padding: 0.7rem 0.3rem;
   font-family: "Open Sans", sans-serif;
-  line-height: .9;
+  line-height: 0.9;
 }
 
 .facebook {
@@ -210,7 +210,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 .facebook-box__body {
@@ -235,7 +235,10 @@ body {
 }
 
 .facebook-box__content {
+  display: block;
   font-size: 0.875rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
 }
 
 .facebook-box__footer {
